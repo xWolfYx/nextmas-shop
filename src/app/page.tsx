@@ -1,6 +1,7 @@
 import About from "./components/About";
 import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
+import Slider from "./components/Slider";
 
 export default function Page() {
   return (
@@ -9,6 +10,7 @@ export default function Page() {
         <Navbar />
         <Hero />
         <About />
+        <Slider />
       </header>
     </div>
   );
