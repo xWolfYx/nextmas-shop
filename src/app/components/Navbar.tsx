@@ -15,7 +15,7 @@ export default function Navbar() {
           The Gifts
         </span>
       </div>
-      <ul className="hidden gap-2 font-semibold uppercase *:cursor-pointer *:content-center *:rounded-xl *:px-5 *:py-3 *:text-[0.75rem] *:duration-400 *:ease-in-out *:hover:bg-[#ff46461a] *:hover:text-[#ff4646] md:flex">
+      <ul className="hidden gap-2 font-semibold uppercase *:cursor-pointer *:content-center *:rounded-xl *:px-5 *:py-3 *:text-[0.75rem] *:duration-400 *:hover:bg-[#ff46461a] *:hover:text-[#ff4646] md:flex">
         <li>Gifts</li>
         <li>About</li>
         <li>Best</li>
