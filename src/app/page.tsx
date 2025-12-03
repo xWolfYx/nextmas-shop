@@ -1,3 +1,4 @@
+import Hero from "./components/Hero";
 import Navbar from "./components/Navbar";
 
 export default function Page() {
@@ -5,6 +6,7 @@ export default function Page() {
     <div className="m-auto max-w-360">
       <header>
         <Navbar />
+        <Hero />
       </header>
     </div>
   );
