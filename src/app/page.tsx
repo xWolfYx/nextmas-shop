@@ -8,10 +8,10 @@ export default function Page() {
     <div className="m-auto max-w-360">
       <header>
         <Navbar />
-        <Hero />
-        <About />
-        <Slider />
       </header>
+      <Hero />
+      <About />
+      <Slider />
     </div>
   );
 }
