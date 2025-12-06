@@ -14,7 +14,6 @@ export default function ContactCard({
   if (type === "mail") hrefType = `mailto:${contact}`;
 
   return (
-    <div>
       <a
         href={type === "place" ? contact[0] : hrefType}
         className="flex w-[420px] flex-col items-center justify-center gap-3 rounded-[20px] bg-[#ecf3f8] p-5 text-center duration-400 hover:text-[#ff4646]"
@@ -33,6 +32,5 @@ export default function ContactCard({
           {callToAction}
         </h3>
       </a>
-    </div>
   );
 }
