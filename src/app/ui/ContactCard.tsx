@@ -16,7 +16,7 @@ export default function ContactCard({
   return (
       <a
         href={type === "place" ? contact[0] : hrefType}
-        className="flex w-[420px] flex-col items-center justify-center gap-3 rounded-[20px] bg-[#ecf3f8] p-5 text-center duration-400 hover:text-[#ff4646]"
+        className="flex min-w-[330px] flex-1 flex-col items-center justify-center gap-3 rounded-[20px] bg-[#ecf3f8] p-5 text-center duration-400 hover:text-[#ff4646]"
       >
         <Image
           src={imgSrc}
