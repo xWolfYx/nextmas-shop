@@ -29,7 +29,9 @@ export default function ContactCard({
         <p className="text-2xl/[1.52] font-semibold tracking-[0.24rem] uppercase">
           {type === "place" ? contact[1] : contact[0]}
         </p>
-        <h3 className="font-semibold uppercase">{callToAction}</h3>
+        <h3 className="font-semibold tracking-[0.08rem] uppercase">
+          {callToAction}
+        </h3>
       </a>
     </div>
   );
