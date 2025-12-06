@@ -19,10 +19,10 @@ export default function Slider() {
   return (
     <section className="flex h-[524px] justify-center overflow-hidden bg-[#ff4646] bg-[url(/backgrounds/bg-snow.png)] bg-cover bg-center py-[60px]">
       <div className="flex flex-col gap-3">
-        <p className={`${allura.className} text-center text-2xl text-white`}>
+        <p className={`${allura.className} text-center text-2xl text-white tracking-[0.075rem]`}>
           Become Happier!
         </p>
-        <h2 className="text-center text-2xl font-semibold text-white uppercase">
+        <h2 className="text-center text-2xl font-semibold tracking-[0.24rem] text-white uppercase">
           in the new 2025
         </h2>
         <div className="mt-5 flex items-center gap-5 px-[82px]">
