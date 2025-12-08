@@ -5,7 +5,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="bg-[#ff4646] bg-[url(/backgrounds/bg-snow.png)] bg-cover bg-center py-[60px]"
+      className="bg-[#ff4646] bg-[url(/backgrounds/bg-snow.png)] bg-cover bg-center px-2 py-[60px]"
     >
       <div className="m-auto grid max-w-[1276px] grid-cols-1 grid-rows-2 rounded-[20px] bg-white md:grid-cols-2 md:grid-rows-1">
         <div className="flex flex-col items-start justify-center gap-5 px-[60px] *:max-w-[426px]">
