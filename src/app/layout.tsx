@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { montseratt } from "@/app/ui/fonts";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
 
 export const metadata: Metadata = {
   title: "Nextmas Shop",
@@ -14,7 +16,13 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${montseratt.className}`}>{children}</body>
+      <body className={`${montseratt.className}`}>
+        <div className="m-auto max-w-360">
+          <Header />
+          {children}
+          <Footer />
+        </div>
+      </body>
     </html>
   );
 }
