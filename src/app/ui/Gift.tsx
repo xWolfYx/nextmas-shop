@@ -38,7 +38,8 @@ export default function Gift({
       </div>
       <div className="flex h-[112] flex-col gap-2 rounded-[1.25rem] bg-white p-5">
         <span
-          className={`text-[0.75rem] font-semibold tracking-[0.063rem] text-[${categoryColor}] uppercase`}
+          style={{ color: categoryColor }}
+          className={`text-[0.75rem] font-semibold tracking-[0.063rem] uppercase`}
         >
           {category}
         </span>
