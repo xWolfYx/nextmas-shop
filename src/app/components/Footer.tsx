@@ -59,9 +59,9 @@ export default function Footer() {
   return (
     <footer
       id="contacts"
-      className="flex flex-col gap-14 px-3 py-[60px] md:px-20 lg:px-[60px]"
+      className="flex flex-col gap-14 px-2 py-[60px] md:px-20 lg:px-[60px]"
     >
-      <div className="flex flex-col gap-3 px-3 md:justify-center lg:flex-row">
+      <div className="flex flex-col gap-3 md:justify-center lg:flex-row">
         {contactInformation.map((info) => (
           <ContactCard
             key={info.callToAction}
