@@ -2,29 +2,29 @@
 import { allura } from "@/app/ui/fonts";
 
 export default function About() {
-  return (
-    <section
-      id="about"
-      className="bg-[#ff4646] bg-[url(/backgrounds/bg-snow.png)] bg-cover bg-center px-2 py-[60px]"
-    >
-      <div className="m-auto grid max-w-[1276px] grid-cols-1 grid-rows-2 rounded-[20px] bg-white md:grid-cols-2 md:grid-rows-1">
-        <div className="flex flex-col items-start justify-center gap-5 px-[60px] *:max-w-[426px]">
-          <p
-            className={`${allura.className} text-2xl tracking-[0.075rem] text-[#ff4646]`}
-          >
-            About
-          </p>
-          <h2 className="text-2xl font-semibold tracking-[0.24rem] uppercase">
-            Unleash your inner superhero!
-          </h2>
-          <p>
-            This New Year marks the beginning of your journey to inner harmony
-            and new strengths. We offer unique gifts that will help you improve
-            your life.
-          </p>
-        </div>
-        <div className="h-132 rounded-[20px] bg-[url(/santa.png)] bg-cover bg-center md:col-start-2"></div>
-      </div>
-    </section>
-  );
+	return (
+		<section
+			id="about"
+			className="bg-[#ff4646] bg-[url(/backgrounds/bg-snow.png)] bg-cover bg-center px-2 py-15"
+		>
+			<div className="grid grid-cols-1 md:grid-cols-2 grid-rows-2 md:grid-rows-1 bg-white m-auto rounded-[20px] max-w-319">
+				<div className="flex flex-col justify-center items-start gap-5 px-15 *:max-w-106.5">
+					<p
+						className={`${allura.className} text-2xl tracking-[0.075rem] text-[#ff4646]`}
+					>
+						About
+					</p>
+					<h2 className="font-semibold text-2xl uppercase tracking-[0.24rem]">
+						Unleash your inner superhero!
+					</h2>
+					<p>
+						This New Year marks the beginning of your journey to inner harmony
+						and new strengths. We offer unique gifts that will help you improve
+						your life.
+					</p>
+				</div>
+				<div className="md:col-start-2 bg-[url(/santa.png)] bg-cover bg-center rounded-[20px] h-132"></div>
+			</div>
+		</section>
+	);
 }

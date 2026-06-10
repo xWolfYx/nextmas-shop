@@ -3,43 +3,48 @@
 import { useEffect, useState } from "react";
 import Gift from "./Gift";
 
+type Gifts = {
+	name: string;
+	category: string;
+};
+
 export default function Gifts() {
-  const [gifts, setGifts] = useState([]);
+	const [gifts, setGifts] = useState<Gifts[]>([]);
 
-  useEffect(() => {
-    async function loadData() {
-      const res = await fetch("/fake-database.json");
-      const data = await res.json();
-      setGifts(data);
-    }
+	useEffect(() => {
+		async function loadData() {
+			const res = await fetch("/fake-database.json");
+			const data = await res.json();
+			setGifts(data);
+		}
 
-    loadData();
-  }, []);
+		loadData();
+	}, []);
 
-  return (
-    <div className="flex flex-col items-center gap-5 rounded-[1.25rem] bg-[#ff4646] bg-[url(/backgrounds/bg-garland.png)] bg-contain bg-no-repeat py-[60px]">
-      <h1 className="text-center text-[2rem] font-semibold tracking-[0.36rem] text-white uppercase">
-        Achieve health,
-        <br /> harmony, and
-        <br /> inner strength
-      </h1>
-      <GiftsFilter />
-      <div className="grid w-full grid-cols-[repeat(auto-fill,19.375rem)] items-center justify-center gap-3">
-        {gifts.map((gift: { name: string; category: string }) => (
-          <Gift key={gift.name} name={gift.name} category={gift.category} />
-        ))}
-      </div>
-    </div>
-  );
+	return (
+		<div className="flex flex-col items-center gap-5 bg-[#ff4646] bg-[url(/backgrounds/bg-garland.png)] bg-contain bg-no-repeat py-15 rounded-[1.25rem]">
+			<h1 className="font-semibold text-[2rem] text-white text-center uppercase tracking-[0.36rem]">
+				Achieve health,
+				<br /> harmony, and
+				<br /> inner strength
+			</h1>
+			<GiftsFilter />
+			<div className="justify-center items-center gap-3 grid grid-cols-[repeat(auto-fill,19.375rem)] w-full">
+				{gifts.map(({ name, category }) => (
+					<Gift key={name} name={name} category={category} />
+				))}
+			</div>
+		</div>
+	);
 }
 
 function GiftsFilter() {
-  return (
-    <div className="flex flex-col gap-2 font-semibold text-white *:cursor-pointer *:rounded-xl *:px-5 *:py-3 *:text-[0.75rem] *:tracking-[0.037rem] *:uppercase *:duration-400 *:hover:bg-[#ffffff33] sm:flex-row">
-      <button>All</button>
-      <button>For work</button>
-      <button>For health</button>
-      <button>For harmony</button>
-    </div>
-  );
+	return (
+		<div className="flex sm:flex-row flex-col gap-2 *:hover:bg-[#ffffff33] *:px-5 *:py-3 *:rounded-xl font-semibold text-white *:text-[0.75rem] *:uppercase *:tracking-[0.037rem] *:duration-400 *:cursor-pointer">
+			<button type="button">All</button>
+			<button type="button">For work</button>
+			<button type="button">For health</button>
+			<button type="button">For harmony</button>
+		</div>
+	);
 }

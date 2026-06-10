@@ -1,21 +1,30 @@
+import clsx from "clsx";
+
 export default function BurgerMenuIcon({
-  isOpen,
-  onBurgerOpen,
+	isOpen,
+	onBurgerOpen,
 }: {
-  isOpen: boolean;
-  onBurgerOpen: () => void;
+	isOpen: boolean;
+	onBurgerOpen: () => void;
 }) {
-  return (
-    <div
-      className="flex size-[40] flex-col items-center justify-center gap-2 *:duration-400 md:hidden"
-      onClick={onBurgerOpen}
-    >
-      <div
-        className={`h-px w-5 rounded-[20px] bg-[#191c29] ${isOpen ? "translate-y-[5px] -rotate-45" : ""}`}
-      ></div>
-      <div
-        className={`h-px w-5 rounded-[20px] bg-[#191c29] ${isOpen ? "-translate-y-1 rotate-45" : ""}`}
-      ></div>
-    </div>
-  );
+	return (
+		<button
+			type="button"
+			className="md:hidden flex flex-col justify-center items-center gap-2 size-[40] *:duration-400"
+			onClick={onBurgerOpen}
+		>
+			<div
+				className={clsx(
+					"bg-[#191c29] rounded-[20px] w-5 h-px",
+					isOpen && "translate-y-1.25 -rotate-45",
+				)}
+			></div>
+			<div
+				className={clsx(
+					"bg-[#191c29] rounded-[20px] w-5 h-px",
+					isOpen && "-translate-y-1 rotate-45",
+				)}
+			></div>
+		</button>
+	);
 }

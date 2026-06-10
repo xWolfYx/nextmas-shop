@@ -4,12 +4,12 @@ import Hero from "./components/Hero";
 import Slider from "./components/Slider";
 
 export default function Page() {
-  return (
-    <>
-      <Hero />
-      <About />
-      <Slider />
-      <CTA />
-    </>
-  );
+	return (
+		<>
+			<Hero />
+			<About />
+			<Slider />
+			<CTA />
+		</>
+	);
 }

@@ -1,11 +1,14 @@
 export default function SliderButton({
-  children,
+	children,
 }: {
-  children: React.ReactNode;
+	children: React.ReactNode;
 }) {
-  return (
-    <button className="group flex size-14 cursor-pointer items-center justify-center rounded-[1.25rem] border border-white duration-400 hover:bg-white">
-      {children}
-    </button>
-  );
+	return (
+		<button
+			type="button"
+			className="group flex justify-center items-center hover:bg-white border border-white rounded-[1.25rem] size-14 duration-400 cursor-pointer"
+		>
+			{children}
+		</button>
+	);
 }

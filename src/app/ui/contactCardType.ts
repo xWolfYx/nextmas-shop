@@ -1,6 +1,6 @@
 export type ContactInformation = {
-  imgSrc: string;
-  contact: string[];
-  callToAction: string;
-  type: string;
+	imgSrc: string;
+	contact: string[];
+	callToAction: string;
+	type: string;
 };
