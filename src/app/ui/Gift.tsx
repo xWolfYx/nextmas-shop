@@ -4,16 +4,21 @@ import Image from "next/image";
 export default function Gift({
 	name,
 	category,
+	onClick,
 }: {
 	name: string;
 	category: string;
+	onClick: () => void;
 }) {
 	return (
-		<div className="bg-[#ecf3f8] rounded-[1.25rem] max-w-77.5">
+		<div
+			className="bg-[#ecf3f8] rounded-[1.25rem] max-w-77.5"
+			onClick={onClick}
+		>
 			<div className="rounded-[1.25rem]">
 				<Image
 					src={clsx(
-						category === "For Work" && "/gifts/gift-for-harmony.png",
+						category === "For Work" && "/gifts/gift-for-work.png",
 						category === "For Health" && "/gifts/gift-for-health.png",
 						category === "For Harmony" && "/gifts/gift-for-harmony.png",
 					)}

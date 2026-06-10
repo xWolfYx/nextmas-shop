@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Gift from "./Gift";
+import GiftModal from "./giftModal";
 
 type Gifts = {
 	name: string;
@@ -10,6 +11,11 @@ type Gifts = {
 
 export default function Gifts() {
 	const [gifts, setGifts] = useState<Gifts[]>([]);
+	const [activeGift, setActiveGift] = useState<string | null>(null);
+
+	const handleSetActiveGift = (name: string | null) => {
+		setActiveGift(name);
+	};
 
 	useEffect(() => {
 		async function loadData() {
@@ -31,9 +37,15 @@ export default function Gifts() {
 			<GiftsFilter />
 			<div className="justify-center items-center gap-3 grid grid-cols-[repeat(auto-fill,19.375rem)] w-full">
 				{gifts.map(({ name, category }) => (
-					<Gift key={name} name={name} category={category} />
+					<Gift
+						key={name}
+						name={name}
+						category={category}
+						onClick={() => handleSetActiveGift(name)}
+					/>
 				))}
 			</div>
+			<GiftModal activeGift={activeGift} onModalClose={handleSetActiveGift} />
 		</div>
 	);
 }
