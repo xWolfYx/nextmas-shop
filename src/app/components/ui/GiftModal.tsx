@@ -48,14 +48,7 @@ export default function GiftModal({
 				)}
 			>
 				<div className="relative bg-[rgb(236,243,248)] rounded-[1.25rem] w-[min(95%,25rem)]">
-					<button
-						type="button"
-						onClick={() => onModalClose(null)}
-						className="top-2 right-2 absolute flex flex-col justify-center items-center gap-2 size-10"
-					>
-						<div className="bg-[#191c29] rounded-[20px] w-5 h-px -rotate-45 translate-y-1.25"></div>
-						<div className="bg-[#191c29] rounded-[20px] w-5 h-px rotate-45 -translate-y-1"></div>
-					</button>
+					<CloseBtn onModalClose={onModalClose} />
 					{gift && (
 						<Image
 							src={clsx(
@@ -147,4 +140,21 @@ function Snowflakes({ count }: { count: number }) {
 			className={clsx("not-last:mr-2 size-4", i >= count / 100 && "opacity-15")}
 		/>
 	));
+}
+
+function CloseBtn({
+	onModalClose,
+}: {
+	onModalClose: (name: string | null) => void;
+}) {
+	return (
+		<button
+			type="button"
+			onClick={() => onModalClose(null)}
+			className="top-2 right-2 absolute flex flex-col justify-center items-center gap-2 size-10 cursor-pointer"
+		>
+			<div className="bg-[#191c29] rounded-[20px] w-5 h-px -rotate-45 translate-y-1.25"></div>
+			<div className="bg-[#191c29] rounded-[20px] w-5 h-px rotate-45 -translate-y-1"></div>
+		</button>
+	);
 }
