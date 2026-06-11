@@ -1,27 +1,23 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import type { Gift as GiftType } from "../lib/types";
+import { shuffleArray } from "../utils/helpers";
 import Gift from "./Gift";
 import GiftModal from "./giftModal";
 
-type Gifts = {
-	name: string;
-	category: string;
-};
-
 export default function Gifts() {
-	const [gifts, setGifts] = useState<Gifts[]>([]);
+	const [gifts, setGifts] = useState<GiftType[]>([]);
 	const [activeGift, setActiveGift] = useState<string | null>(null);
 
-	const handleSetActiveGift = (name: string | null) => {
-		setActiveGift(name);
-	};
+	const handleSetActiveGift = (name: string | null) => setActiveGift(name);
 
 	useEffect(() => {
 		async function loadData() {
 			const res = await fetch("/fake-database.json");
 			const data = await res.json();
-			setGifts(data);
+
+			setGifts(shuffleArray(data));
 		}
 
 		loadData();
