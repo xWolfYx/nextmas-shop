@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import BurgerMenu from "../ui/BurgerMenu";
+import BurgerMenu from "./ui/BurgerMenu";
 import Navbar from "./Navbar";
 
 export default function Header() {

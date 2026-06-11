@@ -1,5 +1,5 @@
-import { allura } from "@/app/ui/fonts";
-import DarkButton from "../ui/DarkButton";
+import { allura } from "@/app/components/ui/fonts";
+import DarkButton from "./ui/DarkButton";
 
 export default function Hero() {
 	return (

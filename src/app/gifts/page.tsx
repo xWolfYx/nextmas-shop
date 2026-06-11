@@ -1,4 +1,4 @@
-import Gifts from "../ui/Gifts";
+import Gifts from "../components/ui/Gifts";
 
 export default function Page() {
 	return (

@@ -1,10 +1,10 @@
 "use client";
 
 import dynamic from "next/dynamic";
-import DarkButton from "../ui/DarkButton";
-import { allura } from "../ui/fonts";
+import DarkButton from "./ui/DarkButton";
+import { allura } from "./ui/fonts";
 
-const Timer = dynamic(() => import("../ui/Timer"), { ssr: false });
+const Timer = dynamic(() => import("./ui/Timer"), { ssr: false });
 
 export default function CTA() {
 	return (

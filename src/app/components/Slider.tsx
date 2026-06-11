@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { Fragment } from "react/jsx-runtime";
-import { allura } from "../ui/fonts";
-import SliderButton from "../ui/SliderButton";
+import { allura } from "./ui/fonts";
+import SliderButton from "./ui/SliderButton";
 
 type SliderImg = {
 	text: string;

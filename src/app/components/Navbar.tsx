@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
-import BurgerMenuIcon from "../ui/BurgerMenuIcon";
-import ListItems from "../ui/ListItems";
+import BurgerMenuIcon from "./ui/BurgerMenuIcon";
+import ListItems from "./ui/ListItems";
 
 export default function Navbar({
 	isOpen,

@@ -1,9 +1,9 @@
-import ContactCard from "../ui/ContactCard";
+import ContactCard from "./ui/ContactCard";
 
-import type { ContactInformation } from "../ui/contactCardType";
-import { allura } from "../ui/fonts";
-import SocialIcon from "../ui/SocialIcon";
-import { TelegramSVG, FacebookSVG, InstagramSVG, XSVG } from "../ui/socialSvgs";
+import type { ContactInformation } from "./ui/contactCardType";
+import { allura } from "./ui/fonts";
+import SocialIcon from "./ui/SocialIcon";
+import { TelegramSVG, FacebookSVG, InstagramSVG, XSVG } from "./ui/socialSvgs";
 
 type SocialIcons = {
 	name: string;

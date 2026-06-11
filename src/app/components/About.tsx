@@ -1,5 +1,5 @@
 // import Image from "next/image";
-import { allura } from "@/app/ui/fonts";
+import { allura } from "@/app/components/ui/fonts";
 
 export default function About() {
 	return (

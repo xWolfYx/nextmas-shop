@@ -3,7 +3,7 @@
 import clsx from "clsx";
 import Image from "next/image";
 import { useEffect, useState } from "react";
-import type { Gift } from "../lib/types";
+import type { Gift } from "../../lib/types";
 
 export default function GiftModal({
 	activeGift,

@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { montseratt } from "@/app/ui/fonts";
+import { montseratt } from "@/app/components/ui/fonts";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
 
