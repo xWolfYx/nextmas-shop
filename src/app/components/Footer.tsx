@@ -1,35 +1,38 @@
+import { FiFacebook } from "react-icons/fi";
+import { PiTelegramLogoDuotone } from "react-icons/pi";
+import { RiTwitterXFill } from "react-icons/ri";
+import { SiInstagram } from "react-icons/si";
 import type { ContactInformation } from "../lib/types";
 import ContactCard from "./ui/ContactCard";
 import { allura } from "./ui/fonts";
 import SocialIcon from "./ui/SocialIcon";
-import { TelegramSVG, FacebookSVG, InstagramSVG, XSVG } from "./ui/socialSvgs";
 
 type SocialIcons = {
 	name: string;
 	link: string;
-	Icon: React.FC;
+	Icon: React.ComponentType;
 };
 
 const socialIcons: SocialIcons[] = [
 	{
 		name: "telegram",
 		link: "https://web.telegram.org/",
-		Icon: TelegramSVG,
+		Icon: PiTelegramLogoDuotone,
 	},
 	{
 		name: "facebook",
 		link: "https://www.facebook.com/",
-		Icon: FacebookSVG,
+		Icon: FiFacebook,
 	},
 	{
 		name: "instagram",
 		link: "https://www.instagram.com/",
-		Icon: InstagramSVG,
+		Icon: SiInstagram,
 	},
 	{
 		name: "x",
 		link: "https://x.com/",
-		Icon: XSVG,
+		Icon: RiTwitterXFill,
 	},
 ];
 
@@ -62,20 +65,14 @@ export default function Footer() {
 		>
 			<div className="flex lg:flex-row flex-col md:justify-center gap-3">
 				{contactInformation.map((info) => (
-					<ContactCard
-						key={info.callToAction}
-						imgSrc={info.imgSrc}
-						contact={info.contact}
-						callToAction={info.callToAction}
-						type={info.type}
-					/>
+					<ContactCard key={info.callToAction} {...info} />
 				))}
 			</div>
 			<div className="flex flex-col gap-3">
 				<div className="flex justify-center gap-3 transition-colors duration-400">
-					{socialIcons.map((social) => (
-						<SocialIcon link={social.link} key={social.name}>
-							{<social.Icon />}
+					{socialIcons.map(({ name, link, Icon }) => (
+						<SocialIcon link={link} key={name}>
+							<Icon />
 						</SocialIcon>
 					))}
 				</div>
