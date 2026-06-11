@@ -144,7 +144,7 @@ function Snowflakes({ count }: { count: number }) {
 			key={i}
 			width={16}
 			height={16}
-			className={clsx("size-4", i >= count / 100 && "opacity-50")}
+			className={clsx("size-4", i >= count / 100 && "opacity-15")}
 		/>
 	));
 }
