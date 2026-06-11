@@ -97,7 +97,7 @@ export default function GiftModal({
 									+{gift?.superpowers.live}
 								</span>
 								<div className="flex justify-center items-center *:size-4">
-									<Snowflakes count={gift?.superpowers.live} />
+									<Snowflakes count={gift?.superpowers.live ?? 0} />
 								</div>
 							</div>
 							<div>
@@ -106,7 +106,7 @@ export default function GiftModal({
 									+{gift?.superpowers.create}
 								</span>
 								<div className="flex justify-center items-center *:size-4">
-									<Snowflakes count={gift?.superpowers.create} />
+									<Snowflakes count={gift?.superpowers.create ?? 0} />
 								</div>
 							</div>
 							<div>
@@ -115,7 +115,7 @@ export default function GiftModal({
 									+{gift?.superpowers.love}
 								</span>
 								<div className="flex justify-center items-center *:size-4">
-									<Snowflakes count={gift?.superpowers.love} />
+									<Snowflakes count={gift?.superpowers.love ?? 0} />
 								</div>
 							</div>
 							<div>
@@ -124,7 +124,7 @@ export default function GiftModal({
 									+{gift?.superpowers.dream}
 								</span>
 								<div className="flex justify-center items-center">
-									<Snowflakes count={gift?.superpowers.dream} />
+									<Snowflakes count={gift?.superpowers.dream ?? 0} />
 								</div>
 							</div>
 						</div>
