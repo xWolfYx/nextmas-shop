@@ -5,6 +5,7 @@ import type { Gift as GiftType } from "../lib/types";
 import { shuffleArray } from "../utils/helpers";
 import Gift from "./Gift";
 import GiftModal from "./giftModal";
+import GiftsFilter from "./giftsFilter";
 
 export default function Gifts() {
 	const [gifts, setGifts] = useState<GiftType[]>([]);
@@ -42,17 +43,6 @@ export default function Gifts() {
 				))}
 			</div>
 			<GiftModal activeGift={activeGift} onModalClose={handleSetActiveGift} />
-		</div>
-	);
-}
-
-function GiftsFilter() {
-	return (
-		<div className="flex sm:flex-row flex-col gap-2 *:hover:bg-[#ffffff33] *:px-5 *:py-3 *:rounded-xl font-semibold text-white *:text-[0.75rem] *:uppercase *:tracking-[0.037rem] *:duration-400 *:cursor-pointer">
-			<button type="button">All</button>
-			<button type="button">For work</button>
-			<button type="button">For health</button>
-			<button type="button">For harmony</button>
 		</div>
 	);
 }
