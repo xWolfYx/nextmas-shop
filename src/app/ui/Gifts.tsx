@@ -2,14 +2,15 @@
 
 import { useEffect, useState } from "react";
 import type { Gift as GiftType } from "../lib/types";
-import { shuffleArray } from "../utils/helpers";
+import { filterGifts, shuffleArray } from "../utils/helpers";
 import Gift from "./Gift";
 import GiftModal from "./giftModal";
 import GiftsFilter from "./giftsFilter";
 
 export default function Gifts() {
-	const [gifts, setGifts] = useState<GiftType[]>([]);
+	const [allGifts, setAllGifts] = useState<GiftType[]>([]);
 	const [activeGift, setActiveGift] = useState<string | null>(null);
+	const [activeFilter, setActiveFilter] = useState<string>("all");
 
 	const handleSetActiveGift = (name: string | null) => setActiveGift(name);
 
@@ -18,11 +19,13 @@ export default function Gifts() {
 			const res = await fetch("/fake-database.json");
 			const data = await res.json();
 
-			setGifts(shuffleArray(data));
+			setAllGifts(shuffleArray(data));
 		}
 
 		loadData();
 	}, []);
+
+	const visibleGifts = filterGifts(allGifts, activeFilter);
 
 	return (
 		<div className="flex flex-col items-center gap-5 bg-[#ff4646] bg-[url(/backgrounds/bg-garland.png)] bg-contain bg-no-repeat py-15 rounded-[1.25rem]">
@@ -31,9 +34,12 @@ export default function Gifts() {
 				<br /> harmony, and
 				<br /> inner strength
 			</h1>
-			<GiftsFilter />
+			<GiftsFilter
+				activeFilter={activeFilter}
+				setActiveFilter={setActiveFilter}
+			/>
 			<div className="justify-center items-center gap-3 grid grid-cols-[repeat(auto-fill,19.375rem)] w-full">
-				{gifts.map(({ name, category }) => (
+				{visibleGifts.map(({ name, category }) => (
 					<Gift
 						key={name}
 						name={name}
