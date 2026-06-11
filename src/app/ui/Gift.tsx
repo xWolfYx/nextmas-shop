@@ -12,7 +12,7 @@ export default function Gift({
 }) {
 	return (
 		<div
-			className="bg-[#ecf3f8] rounded-[1.25rem] max-w-77.5"
+			className="group bg-[#ecf3f8] rounded-[1.25rem] max-w-77.5 *:group-hover:text-[rgb(255,70,70)] *:transition *:duration-150 cursor-pointer"
 			onClick={onClick}
 		>
 			<div className="rounded-[1.25rem]">
