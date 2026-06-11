@@ -1,6 +1,5 @@
+import type { ContactInformation } from "../lib/types";
 import ContactCard from "./ui/ContactCard";
-
-import type { ContactInformation } from "./ui/contactCardType";
 import { allura } from "./ui/fonts";
 import SocialIcon from "./ui/SocialIcon";
 import { TelegramSVG, FacebookSVG, InstagramSVG, XSVG } from "./ui/socialSvgs";

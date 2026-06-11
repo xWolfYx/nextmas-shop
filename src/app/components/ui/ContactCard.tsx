@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import Image from "next/image";
-import type { ContactInformation } from "./contactCardType";
+import type { ContactInformation } from "@/app/lib/types";
 
 export default function ContactCard({
 	imgSrc,

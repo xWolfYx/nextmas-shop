@@ -11,3 +11,10 @@ export type Superpowers = {
 	love: number;
 	dream: number;
 };
+
+export type ContactInformation = {
+	imgSrc: string;
+	contact: string[];
+	callToAction: string;
+	type: string;
+};
