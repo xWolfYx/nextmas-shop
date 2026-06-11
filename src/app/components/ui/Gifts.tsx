@@ -4,8 +4,8 @@ import { useEffect, useState } from "react";
 import type { Gift as GiftType } from "../../lib/types";
 import { filterGifts, shuffleArray } from "../../utils/helpers";
 import Gift from "./Gift";
-import GiftModal from "./giftModal";
-import GiftsFilter from "./giftsFilter";
+import GiftModal from "./GiftModal";
+import GiftsFilter from "./GiftsFilter";
 
 export default function Gifts() {
 	const [allGifts, setAllGifts] = useState<GiftType[]>([]);
