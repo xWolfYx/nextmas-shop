@@ -67,7 +67,7 @@ export default function GiftModal({
 							alt=""
 							width={620}
 							height={460}
-							className="h-14.375"
+							className="h-57.5 object-cover"
 						/>
 					)}
 					<div className="flex flex-col gap-2 bg-white p-5 rounded-[1.25rem]">
