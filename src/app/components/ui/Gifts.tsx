@@ -1,8 +1,8 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import type { Gift as GiftType } from "../../lib/types";
-import { filterGifts, shuffleArray } from "../../utils/helpers";
+import type { Gift as GiftType } from "@/app/lib/types";
+import { filterGifts, shuffleArray } from "@/app/utils/helpers";
 import Gift from "./Gift";
 import GiftModal from "./GiftModal";
 import GiftsFilter from "./GiftsFilter";
