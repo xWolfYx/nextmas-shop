@@ -1,8 +1,8 @@
 "use client";
 
 import { useState } from "react";
-import BurgerMenu from "./ui/BurgerMenu";
 import Navbar from "./Navbar";
+import BurgerMenu from "./ui/BurgerMenu";
 
 export default function Header() {
 	const [isOpen, setIsOpen] = useState(false);
