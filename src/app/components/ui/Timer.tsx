@@ -1,6 +1,7 @@
 "use client";
 
 import { Fragment, useEffect, useState } from "react";
+import { PiLineVerticalThin } from "react-icons/pi";
 
 const labels = ["Days", "Hours", "Minutes", "Seconds"] as const;
 
@@ -28,14 +29,19 @@ export default function Timer() {
 	}, []);
 
 	return (
-		<div className="flex justify-center items-center bg-[#ffffff66] p-3 rounded-[1.25rem] font-semibold text-white uppercase">
+		<div className="items-center grid grid-cols-[repeat(3,4.5rem_10)4.5rem] bg-[#ffffff66] p-3 rounded-[1.25rem] font-semibold text-white uppercase">
 			{labels.map((label, i) => {
 				const key = label.toLowerCase() as TimeLeftKey;
 
 				return (
 					<Fragment key={label}>
-						{i > 0 && <Divider />}
-						<div className="flex flex-col items-center w-20">
+						{i > 0 && (
+							<div>
+								<PiLineVerticalThin className="text-white scale-y-150 -translate-x-1 -translate-y-1" />
+							</div>
+						)}
+
+						<div className="flex flex-col items-center">
 							<span className="text-2xl tracking-[0.24rem]">
 								{timeLeft[key]}
 							</span>
@@ -47,27 +53,6 @@ export default function Timer() {
 				);
 			})}
 		</div>
-	);
-}
-
-function Divider() {
-	return (
-		<svg
-			width="1"
-			height="20"
-			viewBox="0 0 1 20"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<line
-				x1="0.5"
-				y1="20"
-				x2="0.500001"
-				y2="-2.18557e-08"
-				stroke="white"
-				strokeOpacity="0.4"
-			/>
-		</svg>
 	);
 }
 
