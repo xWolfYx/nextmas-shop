@@ -1,4 +1,4 @@
-import type { Gift } from "../lib/types";
+import type { Gift, TimeLeft } from "../lib/types";
 
 export function shuffleArray<T>(array: T[]): T[] {
 	const shuffled = [...array];
@@ -16,4 +16,19 @@ export function filterGifts(array: Gift[], filterType: string): Gift[] {
 	return array.filter(
 		(item) => item.category.toLowerCase() === normalizedFilter,
 	);
+}
+
+export function getRemainingTimeToNewYear(): TimeLeft {
+	const targetDate = Number(
+		new Date(Date.UTC(new Date().getFullYear() + 1, 0, 1, 0, 0)),
+	);
+	const currentTime = Date.now();
+	const diff = targetDate - currentTime;
+
+	return {
+		days: Math.floor(diff / (1000 * 60 * 60 * 24)),
+		hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
+		minutes: Math.floor((diff / (1000 * 60)) % 60),
+		seconds: Math.floor((diff / 1000) % 60),
+	};
 }

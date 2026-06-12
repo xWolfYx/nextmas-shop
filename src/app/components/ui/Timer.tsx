@@ -2,18 +2,13 @@
 
 import { Fragment, useEffect, useState } from "react";
 import { PiLineVerticalThin } from "react-icons/pi";
+import type { TimeLeft } from "@/app/lib/types";
+import { getRemainingTimeToNewYear } from "@/app/utils/helpers";
 
 const labels = ["Days", "Hours", "Minutes", "Seconds"] as const;
 
 type Label = (typeof labels)[number];
 type TimeLeftKey = Lowercase<Label>;
-
-type TimeLeft = {
-	days: number;
-	hours: number;
-	minutes: number;
-	seconds: number;
-};
 
 export default function Timer() {
 	const [timeLeft, setTimeLeft] = useState<TimeLeft>(
@@ -54,19 +49,4 @@ export default function Timer() {
 			})}
 		</div>
 	);
-}
-
-function getRemainingTimeToNewYear(): TimeLeft {
-	const targetDate = Number(
-		new Date(Date.UTC(new Date().getFullYear() + 1, 0, 1, 0, 0)),
-	);
-	const currentTime = Date.now();
-	const diff = targetDate - currentTime;
-
-	return {
-		days: Math.floor(diff / (1000 * 60 * 60 * 24)),
-		hours: Math.floor((diff / (1000 * 60 * 60)) % 24),
-		minutes: Math.floor((diff / (1000 * 60)) % 60),
-		seconds: Math.floor((diff / 1000) % 60),
-	};
 }
